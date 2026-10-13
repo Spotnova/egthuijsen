@@ -1,5 +1,5 @@
 /* Egthuijsen · voorbeeldontwerp door Spotnova
-   Idee: de bus van Egthuijsen. Zwart, oranjebruin en geel, met maatlijnen en een stempelvak uit de bouw.
+   Idee: de site is de bus van Egthuijsen. Zwart met grote belettering, een oranjebruine strook met gele rand.
    Statisch, geen build-stap. Kleuren en maten staan bovenaan als variabelen. */
 
 :root {
@@ -30,9 +30,8 @@
   --todo-text: #3d3200;
   --todo-line: #c9a400;
 
-  --font-head: "Bricolage Grotesque", "Arial Black", Arial, sans-serif;
+  --font-head: "Big Shoulders Display", Impact, "Arial Narrow", sans-serif;
   --font-body: "IBM Plex Sans", Arial, Helvetica, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
 
   --gutter: 1.25rem;
   --container: 76rem;
@@ -62,13 +61,14 @@ h1, h2, h3, h4 {
   margin: 0;
   font-family: var(--font-head);
   font-weight: 800;
-  line-height: 0.98;
-  letter-spacing: -0.025em;
+  line-height: 0.92;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
   text-wrap: balance;
 }
-h1 { font-size: clamp(2.8rem, 11vw, 7rem); }
-h2 { font-size: clamp(2.1rem, 7vw, 3.8rem); }
-h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -0.015em; line-height: 1.1; }
+h1 { font-size: clamp(3.2rem, 13vw, 8rem); }
+h2 { font-size: clamp(2.4rem, 8vw, 4.4rem); }
+h3 { font-size: clamp(1.5rem, 4.5vw, 1.9rem); font-weight: 800; line-height: 1; }
 
 .wrap { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
 .wrap--narrow { max-width: 48rem; }
@@ -78,11 +78,11 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 :focus-visible { outline: 3px solid var(--brick); outline-offset: 3px; }
 
-/* Kleine technische labels, zoals op een tekening */
+/* Kleine labels, alleen waar ze iets zeggen */
 .tag {
   display: inline-block;
-  font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500;
-  letter-spacing: 0.06em; text-transform: uppercase;
+  font-family: var(--font-body); font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--brick);
 }
 .on-dark .tag { color: var(--yellow); }
@@ -109,7 +109,7 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
 
 .titlebar {
   border-bottom: 1px solid var(--line);
-  font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted);
+  font-family: var(--font-body); font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted);
 }
 .titlebar .wrap { display: flex; justify-content: space-between; gap: 1rem; padding-top: 0.45rem; padding-bottom: 0.45rem; }
 .titlebar a { text-decoration: none; color: var(--ink); font-weight: 500; }
@@ -121,14 +121,14 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
 
 .logo { display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none; margin-right: auto; }
 .logo__mark { width: 2.6rem; height: 2.6rem; flex: none; }
-.logo__name { display: block; font-family: var(--font-head); font-weight: 800; font-size: 1.5rem; letter-spacing: -0.02em; line-height: 1; }
-.logo__sub { display: block; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-top: 0.25rem; }
+.logo__name { display: block; font-family: var(--font-head); font-weight: 900; font-size: 1.9rem; letter-spacing: 0.02em; line-height: 0.9; text-transform: uppercase; }
+.logo__sub { display: block; font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-top: 0.25rem; }
 
 .menu-toggle {
   display: none; position: relative; z-index: 70;
   align-items: center; gap: 0.5rem;
   min-height: 2.75rem; padding: 0 0.9rem;
-  font: 500 0.85rem var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase;
+  font: 500 0.85rem var(--font-body); letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--ink); background: transparent; border: 1.5px solid var(--ink); border-radius: 0; cursor: pointer;
 }
 .js .menu-toggle { display: inline-flex; }
@@ -142,9 +142,8 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
 .site-nav li { counter-increment: nav; }
 .site-nav a {
   display: flex; align-items: baseline; gap: 0.6rem; text-decoration: none; padding: 0.3rem 0;
-  font-family: var(--font-head); font-weight: 700; font-size: 1.3rem;
+  font-family: var(--font-head); font-weight: 800; font-size: 1.5rem; text-transform: uppercase;
 }
-.site-nav a::before { content: counter(nav, decimal-leading-zero); font: 500 0.8rem var(--font-mono); color: var(--brick); }
 .site-nav__call { display: none; }
 
 /* Mobiel: menu over het hele scherm, zwart metselwerk */
@@ -153,9 +152,8 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
   position: fixed; inset: 0; z-index: 60; padding: 5rem var(--gutter) 2rem;
 }
 .site-nav.is-open a { font-size: clamp(2.2rem, 11vw, 3.4rem); padding: 0.35rem 0; color: var(--on-dark); }
-.site-nav.is-open a::before { color: var(--yellow); }
 .site-nav.is-open a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--yellow); text-underline-offset: 0.15em; text-decoration-thickness: 3px; }
-.site-nav.is-open .site-nav__call { display: block; margin-top: 2rem; font: 500 1rem var(--font-mono); color: var(--on-dark-muted); }
+.site-nav.is-open .site-nav__call { display: block; margin-top: 2rem; font: 500 1rem var(--font-body); color: var(--on-dark-muted); }
 .site-nav.is-open .site-nav__call a { display: inline; font: inherit; color: var(--on-dark); text-decoration: underline; padding: 0; }
 .site-nav.is-open .site-nav__call a::before { content: none; }
 
@@ -165,9 +163,9 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
   .site-nav, .js .site-nav { display: block; flex-basis: auto; padding: 0; }
   .site-nav ol { display: flex; gap: 1.75rem; counter-reset: nav; }
   .site-nav .nav-home { display: none; }
-  .site-nav a { font-size: 1.1rem; padding: 0.4rem 0; border-bottom: 2px solid transparent; }
+  .site-nav a { font-size: 1.35rem; padding: 0.3rem 0; border-bottom: 3px solid transparent; }
   .site-nav a:hover { border-bottom-color: var(--line); }
-  .site-nav a[aria-current="page"] { border-bottom-color: var(--brick); }
+  .site-nav a[aria-current="page"] { border-bottom-color: var(--yellow); }
 }
 
 /* ---------- Knoppen ---------- */
@@ -177,13 +175,13 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
   min-height: 3.25rem; padding: 0.75rem 1.4rem;
   font-family: var(--font-body); font-size: 1.05rem; font-weight: 600;
   text-decoration: none; border: 2px solid transparent; border-radius: 0; cursor: pointer;
-  transition: background 0.15s, color 0.15s, transform 0.15s, box-shadow 0.15s;
+  transition: background 0.15s, color 0.15s;
 }
 .btn svg { width: 1.2em; height: 1.2em; flex: none; }
-.btn--cta { background: var(--brick); color: var(--white); box-shadow: 4px 4px 0 var(--ink); }
-.btn--cta:hover { background: var(--brick-hover); transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--ink); }
-.on-dark .btn--cta { background: var(--yellow); color: var(--ink); box-shadow: 4px 4px 0 var(--brick); }
-.on-dark .btn--cta:hover { background: #ffd43a; box-shadow: 5px 5px 0 var(--brick); }
+.btn--cta { background: var(--ink); color: var(--white); border-bottom: 5px solid var(--yellow); }
+.btn--cta:hover { background: var(--brick); }
+.on-dark .btn--cta { background: var(--yellow); color: var(--ink); border-bottom-color: var(--brick); }
+.on-dark .btn--cta:hover { background: #ffd43a; }
 .btn--line { border-color: currentColor; background: transparent; }
 .btn--line:hover { background: rgba(22, 21, 20, 0.06); }
 .on-dark .btn--line:hover { background: rgba(255, 255, 255, 0.1); }
@@ -193,41 +191,11 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
 
 .arrow-link {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: var(--font-mono); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase;
+  font-family: var(--font-body); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase;
   text-decoration: none; border-bottom: 1.5px solid currentColor; padding-bottom: 0.1rem;
 }
 .arrow-link:hover { color: var(--brick); }
 .on-dark .arrow-link:hover { color: var(--white); }
-
-/* ---------- Maatlijnen ---------- */
-
-.dim {
-  display: flex; align-items: center; gap: 0.7rem;
-  height: 14px;
-  border-left: 1.5px solid var(--brick); border-right: 1.5px solid var(--brick);
-  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brick);
-  white-space: nowrap;
-}
-.dim::before, .dim::after { content: ""; flex: 1; height: 1.5px; background: var(--brick); }
-
-.dim-v {
-  display: flex; flex-direction: column; align-items: center; gap: 0.7rem;
-  width: 14px;
-  border-top: 1.5px solid var(--brick); border-bottom: 1.5px solid var(--brick);
-  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brick);
-}
-.dim-v::before, .dim-v::after { content: ""; flex: 1; width: 1.5px; background: var(--brick); }
-.dim:empty, .dim-v:empty { gap: 0; }
-.dim-v span { writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; }
-
-.on-dark .dim, .on-dark .dim-v { color: var(--yellow); border-color: var(--yellow); }
-.on-dark .dim::before, .on-dark .dim::after, .on-dark .dim-v::before, .on-dark .dim-v::after { background: var(--yellow); }
-
-/* Foto met maatlijn erboven en ernaast */
-.measured { display: grid; grid-template-columns: 14px 1fr; grid-template-rows: auto 1fr; gap: 0.75rem; }
-.measured > .dim { grid-column: 2; }
-.measured > .dim-v { grid-row: 2; }
-.measured > .frame { grid-column: 2; grid-row: 2; }
 
 /* ---------- Fotoplaceholders ----------
    Getekend als sparing: een vak met een kruis erdoor.
@@ -259,7 +227,7 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
 }
 .ph__label, .ph__meta { position: relative; background: var(--ph-bg); padding: 0.15rem 0.5rem; }
 .ph__label { font-weight: 600; font-size: 0.95rem; line-height: 1.3; max-width: 22em; }
-.ph__meta { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; opacity: 0.75; }
+.ph__meta { font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.04em; opacity: 0.75; }
 .ph--tint { --ph-bg: #efe7dc; }
 .on-dark .ph { --x: var(--dark-line-2); --ph-bg: var(--dark-2); border-color: var(--on-dark); color: var(--on-dark); }
 
@@ -288,16 +256,27 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
   .block-title { grid-template-columns: 1fr 1fr; align-items: end; gap: 3rem; }
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero: de bus ---------- */
 
-.hero { padding: 3.5rem 0 4rem; }
-.hero h1 { max-width: 11em; margin: 1rem 0 1.5rem; }
-.hero__row { display: grid; gap: 1.5rem; align-items: end; }
-.hero__visual { margin-top: 3rem; }
+.bus__top { padding: 3rem 0 2.5rem; }
+.bus__name { font-size: clamp(4rem, 21vw, 13rem); line-height: 0.82; letter-spacing: 0.01em; }
+.bus__kicker {
+  display: block; margin-bottom: 0.6rem;
+  font-size: clamp(1.25rem, 4.5vw, 2rem); line-height: 1; letter-spacing: 0.04em; color: var(--yellow);
+}
+.bus__row { display: grid; gap: 1.5rem; margin-top: 2rem; align-items: end; }
+.bus__row .actions { margin-top: 0; }
+.bus__panel { background: var(--brick); color: var(--white); border-bottom: 8px solid var(--yellow); }
+.bus__panel-in { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem 2rem; padding-top: 1.1rem; padding-bottom: 1.1rem; }
+.bus__addr { font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.9rem; }
+.bus__phone { font-family: var(--font-head); font-weight: 900; font-size: clamp(2.4rem, 10vw, 5rem); line-height: 1; text-decoration: none; letter-spacing: 0.02em; }
+.bus__phone:hover { color: var(--yellow); }
+.hero-photo { padding-top: 2.5rem; }
 @media (min-width: 56rem) {
-  .hero { padding: 5.5rem 0 5rem; }
-  .hero__row { grid-template-columns: 1.2fr 1fr; gap: 3rem; }
-  .hero__row .actions { justify-content: flex-end; margin-top: 0; }
+  .bus__top { padding: 4.5rem 0 3.5rem; }
+  .bus__row { grid-template-columns: 1.2fr 1fr; gap: 3rem; }
+  .bus__row .actions { justify-content: flex-end; }
+  .hero-photo { padding-top: 4rem; }
 }
 
 /* ---------- Diensten als werkomschrijving ---------- */
@@ -308,10 +287,10 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
   display: grid; grid-template-columns: 2.6rem 1fr auto; gap: 0.25rem 1rem; align-items: baseline;
   padding: 1.4rem 0; text-decoration: none;
 }
-.spec a::before { content: counter(spec, decimal-leading-zero); font: 500 0.85rem var(--font-mono); color: var(--brick); }
-.spec h3 { grid-column: 2; font-size: clamp(1.5rem, 5vw, 2.3rem); font-weight: 800; letter-spacing: -0.02em; transition: color 0.15s; }
+.spec a::before { content: counter(spec, decimal-leading-zero); font: 900 1.6rem var(--font-head); color: var(--brick); }
+.spec h3 { grid-column: 2; font-size: clamp(1.8rem, 6vw, 2.8rem); transition: color 0.15s; }
 .spec p { grid-column: 2; color: var(--muted); max-width: 36em; }
-.spec__go { grid-column: 3; grid-row: 1; font: 500 1.4rem var(--font-mono); transition: transform 0.15s; }
+.spec__go { grid-column: 3; grid-row: 1; font: 500 1.4rem var(--font-body); transition: transform 0.15s; }
 .spec a:hover h3 { color: var(--brick); }
 .spec a:hover .spec__go { transform: translateX(4px); color: var(--brick); }
 @media (min-width: 56rem) {
@@ -341,7 +320,7 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
 }
 .ba__badge {
   position: absolute; top: 0.8rem; z-index: 2; pointer-events: none;
-  font: 500 0.75rem var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase;
+  font: 500 0.75rem var(--font-body); letter-spacing: 0.08em; text-transform: uppercase;
   background: var(--ink); color: var(--white); padding: 0.25rem 0.6rem;
 }
 .ba__badge--before { left: 0.8rem; }
@@ -352,7 +331,7 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
 }
 .no-js .ba__range { display: none; }
 .ba:focus-within .ba__line { box-shadow: 0 0 0 4px rgba(168, 71, 43, 0.35); }
-.ba-hint { margin-top: 0.6rem; font: 0.8rem var(--font-mono); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+.ba-hint { margin-top: 0.6rem; font: 0.8rem var(--font-body); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
 .on-dark .ba-hint { color: var(--on-dark-muted); }
 
 .feature { display: grid; gap: 2rem; }
@@ -367,7 +346,7 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
 .bento .ph { flex: 1; min-height: 14rem; }
 .bento figcaption {
   display: flex; justify-content: space-between; gap: 1rem; margin-top: 0.6rem;
-  font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase;
+  font-family: var(--font-body); font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase;
 }
 @media (min-width: 44rem) {
   .bento { grid-template-columns: repeat(6, 1fr); grid-auto-rows: 13rem; }
@@ -375,25 +354,6 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
   .bento > :nth-child(6n + 2), .bento > :nth-child(6n + 3) { grid-column: span 2; }
   .bento > :nth-child(6n + 4), .bento > :nth-child(6n + 5), .bento > :nth-child(6n + 6) { grid-column: span 2; grid-row: span 2; }
   .bento .ph { min-height: 0; }
-}
-
-/* ---------- Werkwijze: tijdlijn langs een maatlijn ---------- */
-
-.steps { display: grid; gap: 2rem; position: relative; }
-.steps li { position: relative; padding-left: 2.5rem; }
-.steps li::before {
-  content: ""; position: absolute; left: 0.4rem; top: 0.3rem; width: 0.9rem; height: 0.9rem;
-  border: 2px solid var(--brick); background: var(--paper); border-radius: 50%; z-index: 1;
-}
-.steps::before { content: ""; position: absolute; left: 0.83rem; top: 0.6rem; bottom: 0.6rem; width: 1.5px; background: var(--brick); }
-.steps .tag { display: block; margin-bottom: 0.35rem; }
-.steps h3 { margin-bottom: 0.4rem; }
-.steps p { color: var(--muted); }
-@media (min-width: 56rem) {
-  .steps { grid-template-columns: repeat(4, 1fr); gap: 2rem; padding-top: 2.25rem; }
-  .steps::before { left: 0; right: 0; top: 0.45rem; bottom: auto; width: auto; height: 1.5px; }
-  .steps li { padding-left: 0; }
-  .steps li::before { left: 0; top: -2.25rem; }
 }
 
 /* ---------- Over: tekst met gegevens ---------- */
@@ -408,7 +368,7 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
 .facts div { display: grid; grid-template-columns: 7.5rem 1fr; border-bottom: 1px solid var(--line); }
 .facts div:last-child { border-bottom: 0; }
 .facts dt, .facts dd { padding: 0.75rem 1rem; }
-.facts dt { font: 500 0.72rem var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); border-right: 1px solid var(--line); padding-top: 0.95rem; }
+.facts dt { font: 500 0.72rem var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); border-right: 1px solid var(--line); padding-top: 0.95rem; }
 .facts dd { font-weight: 600; }
 .facts a { text-decoration: none; }
 .facts a:hover { color: var(--brick); }
@@ -420,18 +380,19 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
 .strip h2 { font-size: clamp(1.6rem, 5vw, 2.3rem); }
 @media (min-width: 56rem) { .strip .wrap { grid-template-columns: auto 1fr auto; gap: 2.5rem; } }
 
-/* ---------- Afsluiter ---------- */
+/* ---------- Afsluiter: licht, met het nummer groot ---------- */
 
-.closer h2 { font-size: clamp(2.4rem, 9vw, 5.5rem); max-width: 12em; margin-top: 0.75rem; }
+.closer { border-top: 2px solid var(--ink); }
+.closer h2 { font-size: clamp(2.6rem, 10vw, 6rem); max-width: 12em; }
 .closer__phone {
-  display: inline-block; margin-top: 1.75rem;
-  font-family: var(--font-head); font-weight: 800; font-size: clamp(2.2rem, 9vw, 4.5rem); letter-spacing: -0.02em; line-height: 1;
-  text-decoration: none; color: var(--white);
-  border-bottom: 4px solid var(--yellow);
+  display: inline-block; margin-top: 1.5rem;
+  font-family: var(--font-head); font-weight: 900; font-size: clamp(3rem, 13vw, 7rem); letter-spacing: 0.02em; line-height: 0.9;
+  text-decoration: none; color: var(--ink);
+  border-bottom: 8px solid var(--yellow);
 }
-.closer__phone:hover { border-bottom-color: var(--white); }
-.places { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin-top: 2rem; font-family: var(--font-mono); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--on-dark-muted); }
-.places li::before { content: "+ "; color: var(--yellow); }
+.closer__phone:hover { color: var(--brick); }
+.places { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; margin-top: 2rem; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.places li::before { content: "+ "; color: var(--brick); }
 
 /* ---------- Paginakop ---------- */
 
@@ -442,8 +403,8 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
 /* ---------- Dienstenpagina: detailbladen ---------- */
 
 .sheet { padding: 4rem 0; border-bottom: 2px solid var(--ink); scroll-margin-top: 1rem; }
-.sheet__head { display: grid; grid-template-columns: auto 1fr; gap: 0.25rem 1.25rem; align-items: baseline; margin-bottom: 2rem; }
-.sheet__num { font: 500 clamp(2.5rem, 9vw, 4.5rem) var(--font-mono); color: var(--brick); line-height: 1; grid-row: span 2; }
+.sheet__head { display: grid; grid-template-columns: auto 1fr; gap: 0.25rem 1.25rem; align-items: end; margin-bottom: 2rem; }
+.sheet__num { font: 900 clamp(3rem, 11vw, 5.5rem) var(--font-head); color: var(--brick); line-height: 0.85; }
 .sheet__head h2 { font-size: clamp(2rem, 7vw, 3.4rem); }
 .sheet__body { display: grid; gap: 2.5rem; }
 .sheet__photos { display: grid; grid-template-columns: 2fr 1fr; gap: 0.75rem; }
@@ -453,7 +414,7 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
 
 .items { margin-top: 1.5rem; border-top: 1px solid var(--ink); }
 .items li { display: flex; gap: 0.9rem; padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
-.items li::before { content: "+"; color: var(--brick); font-family: var(--font-mono); }
+.items li::before { content: "+"; color: var(--brick); font-family: var(--font-body); }
 
 /* ---------- Contact: werkbon ---------- */
 
@@ -475,7 +436,7 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
 .workorder__head h2 { font-size: clamp(1.5rem, 5vw, 2rem); }
 .workorder form { display: grid; }
 .wo-field { display: grid; gap: 0.2rem; padding: 0.9rem 1.25rem; border-bottom: 1px solid var(--line); }
-.wo-field label, .wo-field legend { font: 500 0.75rem var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 0; }
+.wo-field label, .wo-field legend { font: 500 0.75rem var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 0; }
 .wo-field .optional { text-transform: none; letter-spacing: 0; }
 .wo-field input, .wo-field select, .wo-field textarea {
   width: 100%; font: inherit; font-size: 1.1rem; color: var(--ink);
@@ -499,30 +460,23 @@ fieldset.wo-field { border: 0; border-bottom: 1px solid var(--line); margin: 0; 
 .workorder__foot { padding: 1.25rem; display: grid; gap: 1rem; justify-items: start; }
 .hp { position: absolute; left: -5000px; }
 
-/* ---------- Footer: stempelvak ----------
-   De lijnen tussen de vakken zijn de achtergrond die door de 1px-gaten heen schijnt. */
+/* ---------- Footer: zijkant van de bus ---------- */
 
-.stamp-wrap { padding: 3rem 0 6.5rem; }
-@media (min-width: 52rem) { .stamp-wrap { padding-bottom: 3rem; } }
-.stamp {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
-  background: var(--ink); border: 2px solid var(--ink); font-size: 0.95rem;
-}
-.stamp > div { padding: 0.75rem 1rem; background: var(--white); min-width: 0; }
-.stamp__name, .stamp__wide { grid-column: 1 / -1; }
-.stamp__name { display: flex; align-items: center; gap: 0.9rem; }
-.stamp__name strong { display: block; font-family: var(--font-head); font-size: clamp(1.4rem, 5vw, 1.9rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
-.stamp__name span { display: block; font: 500 0.7rem var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-top: 0.3rem; }
-.stamp__label { display: block; font: 500 0.68rem var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
-.stamp a { text-decoration: none; }
-.stamp a:hover { color: var(--brick); text-decoration: underline; }
-.stamp nav ul { display: flex; flex-wrap: wrap; gap: 0.2rem 1.25rem; }
-.stamp__note { font: 0.78rem var(--font-mono); color: var(--muted); }
+.van__body { padding: 4rem 0 3rem; }
+.van__grid { display: grid; gap: 2rem; }
+.van__kicker { display: block; font-family: var(--font-head); font-weight: 800; font-size: clamp(1.2rem, 4vw, 1.6rem); text-transform: uppercase; letter-spacing: 0.04em; color: var(--yellow); }
+.van__name { display: block; font-family: var(--font-head); font-weight: 900; font-size: clamp(3.4rem, 15vw, 7rem); line-height: 0.85; text-transform: uppercase; }
+.van__lines { display: grid; gap: 0.3rem; color: var(--on-dark-muted); }
+.van__lines a { color: var(--on-dark); text-decoration: none; font-weight: 600; }
+.van__lines a:hover { color: var(--yellow); }
+.van__nav ul { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
+.van__nav a { font-family: var(--font-head); font-weight: 800; font-size: 1.4rem; text-transform: uppercase; text-decoration: none; }
+.van__nav a:hover { color: var(--yellow); }
+.van__panel { background: var(--brick); color: var(--white); border-bottom: 8px solid var(--yellow); padding: 0.9rem 0 5.5rem; font-size: 0.85rem; }
 @media (min-width: 52rem) {
-  .stamp { grid-template-columns: 1.7fr repeat(4, 1fr); }
-  .stamp__name { grid-column: 1; grid-row: span 2; }
-  .stamp__wide { grid-column: 2 / -1; }
-  .stamp__note.stamp__wide { grid-column: 1 / -1; }
+  .van__grid { grid-template-columns: 1.4fr 1fr; align-items: end; }
+  .van__nav { grid-column: 1 / -1; }
+  .van__panel { padding-bottom: 0.9rem; }
 }
 
 /* ---------- Zwevende bel- en appknop op mobiel ---------- */
@@ -530,7 +484,7 @@ fieldset.wo-field { border: 0; border-bottom: 1px solid var(--line); margin: 0; 
 .fab { position: fixed; right: 1rem; bottom: 1rem; z-index: 40; display: flex; gap: 0.6rem; }
 .fab a {
   display: grid; place-items: center; width: 3.6rem; height: 3.6rem; border-radius: 50%;
-  background: var(--brick); color: var(--white); box-shadow: 3px 3px 0 var(--ink);
+  background: var(--brick); color: var(--white); border-bottom: 4px solid var(--yellow);
 }
 .fab a + a { background: var(--white); color: var(--ink); border: 2px solid var(--ink); }
 .fab svg { width: 1.5rem; height: 1.5rem; }
@@ -540,7 +494,7 @@ fieldset.wo-field { border: 0; border-bottom: 1px solid var(--line); margin: 0; 
 
 .on-page { border-bottom: 1px solid var(--line); background: var(--white); }
 .on-page ol { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; padding: 0.9rem 0; }
-.on-page a { font: 500 0.85rem var(--font-mono); letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; display: inline-block; padding: 0.4rem 0; }
+.on-page a { font: 500 0.85rem var(--font-body); letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; display: inline-block; padding: 0.4rem 0; }
 .on-page a:hover { color: var(--brick); text-decoration: underline; }
 
 .send-box, .tip-box { margin-top: 2rem; padding: 1.5rem; background: var(--white); border: 2px solid var(--ink); }
@@ -550,7 +504,7 @@ fieldset.wo-field { border: 0; border-bottom: 1px solid var(--line); margin: 0; 
 
 .checks { display: grid; gap: 0.6rem; }
 .checks li { position: relative; padding-left: 1.6rem; }
-.checks li::before { content: "→"; position: absolute; left: 0; color: var(--brick); font-family: var(--font-mono); }
+.checks li::before { content: "→"; position: absolute; left: 0; color: var(--brick); font-family: var(--font-body); }
 
 .list-title { margin-top: 3rem; margin-bottom: 0.5rem; }
 .list-title + .muted { margin-bottom: 1rem; }
@@ -566,7 +520,7 @@ fieldset.wo-field { border: 0; border-bottom: 1px solid var(--line); margin: 0; 
 /* "Eerst": hiermee kan Spotnova al verder */
 .first {
   display: inline-block; margin-right: 0.45rem; padding: 0.05rem 0.45rem; vertical-align: 0.12em;
-  font: 500 0.7rem var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase;
+  font: 500 0.7rem var(--font-body); letter-spacing: 0.08em; text-transform: uppercase;
   background: var(--brick); color: var(--white);
 }
 .legend { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin-top: 1.25rem; font-size: 0.92rem; color: var(--muted); }
