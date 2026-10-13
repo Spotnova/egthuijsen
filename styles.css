@@ -468,7 +468,7 @@ h3 { font-size: clamp(1.4rem, 4vw, 1.75rem); font-weight: 700; letter-spacing: -
 
 .items { margin-top: 1.5rem; border-top: 1px solid var(--ink); }
 .items li { display: flex; gap: 0.9rem; padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
-.items li::before { content: "—"; color: var(--red); font-family: var(--font-mono); }
+.items li::before { content: "+"; color: var(--red); font-family: var(--font-mono); }
 
 /* ---------- Contact: werkbon ---------- */
 
