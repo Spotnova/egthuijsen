@@ -278,6 +278,13 @@ h3 { font-size: clamp(1.5rem, 4.5vw, 1.9rem); font-weight: 800; line-height: 1; 
 .bus__addr { font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.9rem; }
 .bus__phone { font-family: var(--font-head); font-weight: 900; font-size: clamp(2.4rem, 10vw, 5rem); line-height: 1; text-decoration: none; letter-spacing: 0.02em; }
 .bus__phone:hover { color: var(--yellow); }
+/* Het logo staat op de bus rechts van de naam */
+.bus__logo, .van__logo { display: none; height: 0.8em; width: auto; margin-left: 0.18em; vertical-align: -0.02em; }
+.nowrap { white-space: nowrap; }
+@media (min-width: 40rem) {
+  .bus__logo, .van__logo { display: inline-block; }
+  .bus__name { font-size: clamp(4rem, 16vw, 12rem); }
+}
 .hero-photo { padding-top: 2.5rem; }
 @media (min-width: 56rem) {
   .bus__top { padding: 4.5rem 0 3.5rem; }
@@ -484,6 +491,7 @@ fieldset.wo-field { border: 0; border-bottom: 1px solid var(--line); margin: 0; 
   .van__grid { grid-template-columns: 1.4fr 1fr; align-items: end; }
   .van__nav { grid-column: 1 / -1; }
   .van__panel { padding-bottom: 0.9rem; }
+  .van__name { font-size: clamp(3rem, 6.5vw, 7rem); }
 }
 
 /* ---------- Zwevende bel- en appknop op mobiel ---------- */
