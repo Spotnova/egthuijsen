@@ -259,10 +259,10 @@ h3 { font-size: clamp(1.5rem, 4.5vw, 1.9rem); font-weight: 800; line-height: 1; 
 /* ---------- Hero: de bus ---------- */
 
 .bus__top { padding: 3rem 0 2.5rem; }
-.bus__name { font-size: clamp(4rem, 21vw, 13rem); line-height: 0.82; letter-spacing: 0.01em; }
+.bus__name { font-size: clamp(4rem, 21vw, 13rem); line-height: 0.82; letter-spacing: 0.01em; color: var(--yellow); }
 .bus__kicker {
   display: block; margin-bottom: 0.6rem;
-  font-size: clamp(1.25rem, 4.5vw, 2rem); line-height: 1; letter-spacing: 0.04em; color: var(--yellow);
+  font-size: clamp(1.25rem, 4.5vw, 2rem); line-height: 1; letter-spacing: 0.04em; color: var(--white);
 }
 .bus__row { display: grid; gap: 1.5rem; margin-top: 2rem; align-items: end; }
 .bus__row .actions { margin-top: 0; }
@@ -464,8 +464,8 @@ fieldset.wo-field { border: 0; border-bottom: 1px solid var(--line); margin: 0; 
 
 .van__body { padding: 4rem 0 3rem; }
 .van__grid { display: grid; gap: 2rem; }
-.van__kicker { display: block; font-family: var(--font-head); font-weight: 800; font-size: clamp(1.2rem, 4vw, 1.6rem); text-transform: uppercase; letter-spacing: 0.04em; color: var(--yellow); }
-.van__name { display: block; font-family: var(--font-head); font-weight: 900; font-size: clamp(3.4rem, 15vw, 7rem); line-height: 0.85; text-transform: uppercase; }
+.van__kicker { display: block; font-family: var(--font-head); font-weight: 800; font-size: clamp(1.2rem, 4vw, 1.6rem); text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); }
+.van__name { display: block; font-family: var(--font-head); font-weight: 900; font-size: clamp(3.4rem, 15vw, 7rem); line-height: 0.85; text-transform: uppercase; color: var(--yellow); }
 .van__lines { display: grid; gap: 0.3rem; color: var(--on-dark-muted); }
 .van__lines a { color: var(--on-dark); text-decoration: none; font-weight: 600; }
 .van__lines a:hover { color: var(--yellow); }
