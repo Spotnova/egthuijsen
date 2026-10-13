@@ -1,5 +1,5 @@
 /* Egthuijsen · voorbeeldontwerp door Spotnova
-   Idee: de site is de bus van Egthuijsen. Zwart met grote belettering, een oranjebruine strook met gele rand.
+   Idee: de site is de bus van Egthuijsen. Zwart met grote belettering, een strook in houtkleur met gele rand.
    Statisch, geen build-stap. Kleuren en maten staan bovenaan als variabelen. */
 
 :root {
@@ -18,9 +18,9 @@
   --dark-line: rgba(255, 255, 255, 0.06);
   --dark-line-2: rgba(255, 255, 255, 0.14);
 
-  --brick: #a8472b;         /* oranjebruin van de bus: knoppen, nummers, maatlijnen */
-  --brick-hover: #873820;
-  --brick-light: #c9694a;
+  --brick: #9a5232;         /* oranjebruin van de bus: knoppen, nummers, maatlijnen */
+  --brick-hover: #7d4126;
+  --brick-light: #b86b47;
   --mortar: #e2c9b8;
   --yellow: #f4c20d;        /* spiegelkappen en spoiler: accent op zwart */
 
@@ -267,6 +267,13 @@ h3 { font-size: clamp(1.5rem, 4.5vw, 1.9rem); font-weight: 800; line-height: 1; 
 .bus__row { display: grid; gap: 1.5rem; margin-top: 2rem; align-items: end; }
 .bus__row .actions { margin-top: 0; }
 .bus__panel { background: var(--brick); color: var(--white); border-bottom: 8px solid var(--yellow); }
+/* Houtnerf, zoals de onderkant van de bus: onregelmatige lijnen in drie lagen */
+.bus__panel, .van__panel {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(60, 25, 10, 0.10) 0 1px, transparent 1px 5px, rgba(60, 25, 10, 0.06) 5px 7px, transparent 7px 13px),
+    repeating-linear-gradient(0deg, rgba(255, 220, 190, 0.06) 0 2px, transparent 2px 19px, rgba(255, 220, 190, 0.04) 19px 22px, transparent 22px 41px),
+    repeating-linear-gradient(90deg, transparent 0 237px, rgba(40, 15, 5, 0.12) 237px 239px, transparent 239px 411px);
+}
 .bus__panel-in { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem 2rem; padding-top: 1.1rem; padding-bottom: 1.1rem; }
 .bus__addr { font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.9rem; }
 .bus__phone { font-family: var(--font-head); font-weight: 900; font-size: clamp(2.4rem, 10vw, 5rem); line-height: 1; text-decoration: none; letter-spacing: 0.02em; }
