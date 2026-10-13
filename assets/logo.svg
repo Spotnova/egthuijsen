@@ -1,7 +1,9 @@
-<!-- Nagetekend naar een foto van de bus. Vervangen door het originele logobestand zodra Egthuijsen dat stuurt. -->
+<!-- Nagetekend naar een foto van de bus: geel huisje binnen vier witte hoeken, iets gedraaid.
+     Vervangen door het originele logobestand zodra Egthuijsen dat stuurt. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <path d="M50 6 88.1 28v44L50 94 11.9 72V28z" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"/>
-  <path d="M50 24 72.5 37 50 50 27.5 37z" fill="#ffd84a"/>
-  <path d="M27.5 37 50 50v26L27.5 63z" fill="#f4c20d"/>
-  <path d="M50 50 72.5 37v26L50 76z" fill="#c99a06"/>
+  <g transform="rotate(15 50 50)">
+    <path d="M14 36V14h22M64 14h22v22M86 64v22H64M36 86H14V64" fill="none" stroke="#fff" stroke-width="6.5" stroke-linecap="square"/>
+    <path d="M50 23 70 46H30z" fill="#f4c20d"/>
+    <path d="M35 49.5h30V77H35z" fill="#f4c20d"/>
+  </g>
 </svg>
