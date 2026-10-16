@@ -29,18 +29,41 @@
     update();
   });
 
-  // Voorbeeld: zolang het Formspree-adres nog VERVANG_DIT is, niets versturen maar een melding tonen.
-  document.querySelectorAll('form[action*="VERVANG_DIT"]').forEach(function (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+  // Contactformulier via Formspree. De bezoeker blijft op de site en ziet een eigen melding.
+  // Zolang het adres nog VERVANG_DIT is (voorbeeld), wordt er niets verstuurd.
+  // Zonder JavaScript verstuurt het formulier gewoon en toont Formspree zijn eigen bedankpagina.
+  document.querySelectorAll('form[action*="formspree.io"]').forEach(function (form) {
+    var foot = form.querySelector('.workorder__foot') || form;
+    var button = form.querySelector('[type="submit"]');
+
+    function show(text, kind) {
       var note = form.querySelector('.form-note');
       if (!note) {
         note = document.createElement('p');
-        note.className = 'form-note';
         note.setAttribute('role', 'status');
-        form.querySelector('.workorder__foot').appendChild(note);
+        foot.appendChild(note);
       }
-      note.textContent = 'Dit is een voorbeeld, dus het formulier verstuurt nog niets. Zodra de site live staat, komt je bericht hier gewoon binnen.';
+      note.className = 'form-note' + (kind ? ' form-note--' + kind : '');
+      note.textContent = text;
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (form.action.indexOf('VERVANG_DIT') !== -1) {
+        show('Dit is een voorbeeld, dus het formulier verstuurt nog niets. Zodra de site live staat, komt je bericht hier gewoon binnen.');
+        return;
+      }
+      button.disabled = true;
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+        .then(function (res) {
+          if (!res.ok) throw new Error('status ' + res.status);
+          form.reset();
+          show('Bedankt! Je aanvraag is binnen. We nemen zo snel mogelijk contact met je op.', 'ok');
+        })
+        .catch(function () {
+          show('Versturen lukte niet. Bel of app ons even op 06 83 23 83 52.', 'error');
+        })
+        .then(function () { button.disabled = false; });
     });
   });
 })();
