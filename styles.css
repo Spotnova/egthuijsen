@@ -421,9 +421,7 @@ h3 { font-size: clamp(1.2rem, 3.6vw, 1.5rem); font-weight: 800; line-height: 1.1
 .sheet__num { font: 800 clamp(2.4rem, 8vw, 4.2rem) var(--font-head); color: var(--brick); line-height: 0.85; }
 .sheet__head h2 { font-size: clamp(1.6rem, 5vw, 2.7rem); }
 .sheet__body { display: grid; gap: 2.5rem; }
-.sheet__photos { display: grid; grid-template-columns: 2fr 1fr; gap: 0.75rem; }
-.sheet__photos > :first-child { grid-row: span 2; }
-.sheet__photos .ph { height: 100%; }
+.sheet__photos { display: grid; }
 @media (min-width: 56rem) { .sheet__body { grid-template-columns: 1fr 1.3fr; gap: 4rem; } }
 
 .items { margin-top: 1.5rem; border-top: 1px solid var(--ink); }
@@ -473,6 +471,7 @@ fieldset.wo-field { border: 0; border-bottom: 1px solid var(--line); margin: 0; 
 .ticks input { width: 1.2rem; height: 1.2rem; accent-color: var(--brick); flex: none; }
 .workorder__foot { padding: 1.25rem; display: grid; gap: 1rem; justify-items: start; }
 .hp { position: absolute; left: -5000px; }
+.form-note { padding: 0.8rem 1rem; background: var(--todo-bg); border-left: 4px solid var(--todo-line); color: var(--todo-text); font-weight: 600; }
 
 /* ---------- Footer: zijkant van de bus ---------- */
 

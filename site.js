@@ -28,4 +28,19 @@
     range.addEventListener('input', update);
     update();
   });
+
+  // Voorbeeld: zolang het Formspree-adres nog VERVANG_DIT is, niets versturen maar een melding tonen.
+  document.querySelectorAll('form[action*="VERVANG_DIT"]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var note = form.querySelector('.form-note');
+      if (!note) {
+        note = document.createElement('p');
+        note.className = 'form-note';
+        note.setAttribute('role', 'status');
+        form.querySelector('.workorder__foot').appendChild(note);
+      }
+      note.textContent = 'Dit is een voorbeeld, dus het formulier verstuurt nog niets. Zodra de site live staat, komt je bericht hier gewoon binnen.';
+    });
+  });
 })();
