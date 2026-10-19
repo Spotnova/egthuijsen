@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact · Egthuijsen, Akersloot · Voorbeeldontwerp</title>
+  <title>Offerte aanvragen · Egthuijsen, Akersloot · Voorbeeldontwerp</title>
   <meta name="description" content="Voorbeeldontwerp voor Bouw- en timmerbedrijf Egthuijsen, gemaakt door Spotnova. Nog niet live.">
   <meta name="robots" content="noindex, nofollow">
   <meta property="og:title" content="Bouw- en timmerbedrijf Egthuijsen · voorbeeldwebsite">
@@ -39,6 +39,7 @@
         <svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#151515"/><g transform="translate(2 2) scale(.6) rotate(15 50 50)"><path d="M14 36V14h22M64 14h22v22M86 64v22H64M36 86H14V64" fill="none" stroke="#fff" stroke-width="6.5" stroke-linecap="square"/><path d="M50 23 70 46H30z" fill="#f4c20d"/><path d="M35 49.5h30V77H35z" fill="#f4c20d"/></g></svg>
         <span><span class="logo__name">Egthuijsen</span><span class="logo__sub">Bouw &amp; timmerwerk</span></span>
       </a>
+      <a class="head-quote" href="contact.html">Offerte<span class="head-quote__long">aanvragen</span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
         <span class="menu-toggle__closed">Menu</span><span class="menu-toggle__open">Sluit</span>
       </button>
@@ -49,6 +50,7 @@
             <li><a href="projecten.html">Projecten</a></li>
             <li><a href="contact.html" aria-current="page">Contact</a></li>
         </ol>
+        <a class="site-nav__quote" href="contact.html">Offerte aanvragen <span aria-hidden="true">→</span></a>
         <p class="site-nav__call">Of bel direct: <a href="tel:+31683238352">06 83 23 83 52</a></p>
       </nav>
     </div>
@@ -58,8 +60,8 @@
 
     <section class="page-head bricks">
       <div class="wrap">
-        <h1>Bel, app of vul de werkbon in</h1>
-        <p class="intro">Vertel kort wat je van plan bent. Foto's van de situatie helpen het meest, die stuur je het makkelijkst via WhatsApp.</p>
+        <h1>Vraag een offerte aan</h1>
+        <p class="intro">Vul de werkbon in en vertel kort wat je van plan bent. Foto's van de situatie helpen het meest, die stuur je het makkelijkst via WhatsApp. Liever eerst even praten? Bel gerust.</p>
       </div>
     </section>
 
@@ -83,7 +85,7 @@
         </div>
 
         <div class="workorder">
-          <div class="workorder__head"><h2>Werkbon</h2><span class="tag">Aanvraag via de website</span></div>
+          <div class="workorder__head"><h2>Werkbon</h2><span class="tag">Offerteaanvraag</span></div>
 
           <!--
             LET OP: Formspree-endpoint moet nog ingevuld worden.
@@ -91,7 +93,7 @@
             2. Vervang VERVANG_DIT hieronder door het formulier-ID.
           -->
           <form action="https://formspree.io/f/VERVANG_DIT" method="POST">
-            <input type="hidden" name="_subject" value="Nieuwe aanvraag via de website">
+            <input type="hidden" name="_subject" value="Offerteaanvraag via de website">
             <label class="hp">Laat dit veld leeg <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
 
             <fieldset class="wo-field">
@@ -146,7 +148,7 @@
 
             <div class="workorder__foot">
               <p class="small muted"><span class="todo">[Zin over wat Egthuijsen met je gegevens doet, met link naar privacyverklaring]</span></p>
-              <button class="btn btn--cta" type="submit">Verstuur werkbon <span aria-hidden="true">→</span></button>
+              <button class="btn btn--cta" type="submit">Vraag offerte aan <span aria-hidden="true">→</span></button>
             </div>
           </form>
         </div>
@@ -172,6 +174,7 @@
   </footer>
 
   <nav class="fab" aria-label="Snel contact">
+    <a class="fab__quote" href="contact.html" aria-current="page">Offerte</a>
     <a href="tel:+31683238352" aria-label="Bel 06 83 23 83 52"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
     <a href="https://wa.me/31683238352" aria-label="Stuur een WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></a>
   </nav>

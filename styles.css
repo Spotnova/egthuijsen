@@ -288,7 +288,7 @@ h3 { font-size: clamp(1.2rem, 3.6vw, 1.5rem); font-weight: 800; line-height: 1.1
 .hero-photo { padding-top: 2.5rem; }
 @media (min-width: 56rem) {
   .bus__top { padding: 4.5rem 0 3.5rem; }
-  .bus__row { grid-template-columns: 1.2fr 1fr; gap: 3rem; }
+  .bus__row { grid-template-columns: minmax(0, 1fr) auto; gap: 3rem; }
   .bus__row .actions { justify-content: flex-end; }
   .hero-photo { padding-top: 4rem; }
 }
@@ -502,7 +502,7 @@ fieldset.wo-field { border: 0; border-bottom: 1px solid var(--line); margin: 0; 
   display: grid; place-items: center; width: 3.6rem; height: 3.6rem; border-radius: 50%;
   background: var(--brick); color: var(--white); border-bottom: 4px solid var(--yellow);
 }
-.fab a + a { background: var(--white); color: var(--ink); border: 2px solid var(--ink); }
+.fab a:last-child { background: var(--white); color: var(--ink); border: 2px solid var(--ink); }
 .fab svg { width: 1.5rem; height: 1.5rem; }
 @media (min-width: 52rem) { .fab { display: none; } }
 
@@ -560,3 +560,40 @@ fieldset.wo-field { border: 0; border-bottom: 1px solid var(--line); margin: 0; 
 
 /* Kopjes op de aanleverlijst */
 .wrap--narrow > h2 { margin: 0.4rem 0 1rem; }
+
+/* ---------- Offerte aanvragen: geel met een oranjebruine onderrand, zoals de spoiler van de bus ---------- */
+
+.head-quote {
+  display: inline-flex; align-items: center; gap: 0.3em; min-height: 2.75rem; padding: 0 0.85rem;
+  background: var(--yellow); color: var(--ink); border-bottom: 4px solid var(--brick);
+  font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; text-transform: uppercase; text-decoration: none; white-space: nowrap;
+}
+.head-quote:hover { background: #ffd43a; }
+/* Op smalle telefoons staat de offerteknop onderin vast in beeld (.fab), dus niet ook in de kop */
+.masthead .head-quote { display: none; }
+.head-quote__long { display: none; }
+@media (min-width: 30rem) { .masthead .head-quote { display: inline-flex; } }
+@media (min-width: 40rem) { .head-quote__long { display: inline; } }
+@media (min-width: 52rem) {
+  .site-nav, .js .site-nav { order: 1; }
+  .head-quote { order: 2; margin-left: 1rem; }
+}
+
+.site-nav .site-nav__quote { display: none; }
+.js .site-nav.is-open .site-nav__quote {
+  display: inline-flex; align-self: flex-start; margin-top: 2rem; padding: 0.8rem 1.2rem;
+  background: var(--yellow); color: var(--ink); border-bottom: 5px solid var(--brick);
+  font-family: var(--font-head); font-weight: 700; font-size: 1.2rem; text-transform: uppercase; text-decoration: none;
+}
+.js .site-nav.is-open .site-nav__quote::before { content: none; }
+
+.fab { align-items: center; }
+.fab .fab__quote {
+  width: auto; height: 3.6rem; padding: 0 1.2rem; border-radius: 999px;
+  background: var(--yellow); color: var(--ink); border-bottom: 4px solid var(--brick); border-top: 0; border-left: 0; border-right: 0;
+  font-family: var(--font-head); font-weight: 800; font-size: 1.05rem; text-transform: uppercase; text-decoration: none;
+}
+
+/* Op de offertepagina zelf: geen offerteknop onderin, en op de telefoon het formulier eerst */
+.fab .fab__quote[aria-current="page"] { display: none; }
+@media (max-width: 55.99rem) { .contact .workorder { order: -1; } }

@@ -58,7 +58,7 @@
         .then(function (res) {
           if (!res.ok) throw new Error('status ' + res.status);
           form.reset();
-          show('Bedankt! Je aanvraag is binnen. We nemen zo snel mogelijk contact met je op.', 'ok');
+          show('Bedankt! Je offerteaanvraag is binnen. We nemen zo snel mogelijk contact met je op.', 'ok');
         })
         .catch(function () {
           show('Versturen lukte niet. Bel of app ons even op 06 83 23 83 52.', 'error');
