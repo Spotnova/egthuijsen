@@ -1,4 +1,4 @@
-/* Egthuijsen · voorbeeldontwerp door Spotnova
+/* Egthuijsen · voorbeeldontwerp door SpotNova
    Idee: de site is de bus van Egthuijsen. Zwart met grote belettering, een strook in houtkleur met gele rand.
    Statisch, geen build-stap. Kleuren en maten staan bovenaan als variabelen. */
 
@@ -533,7 +533,7 @@ fieldset.wo-field { border: 0; border-bottom: 1px solid var(--line); margin: 0; 
 .checklist__text > span { display: block; margin-top: 0.2rem; font-size: 0.92rem; color: var(--muted); }
 .checklist label:has(input:checked) strong { text-decoration: line-through; text-decoration-thickness: 2px; color: var(--muted); }
 
-/* "Eerst": hiermee kan Spotnova al verder */
+/* "Eerst": hiermee kan SpotNova al verder */
 .first {
   display: inline-block; margin-right: 0.45rem; padding: 0.05rem 0.45rem; vertical-align: 0.12em;
   font: 500 0.7rem var(--font-body); letter-spacing: 0.08em; text-transform: uppercase;
